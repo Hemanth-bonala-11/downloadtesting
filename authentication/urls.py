@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from authentication import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
 
@@ -14,4 +16,4 @@ urlpatterns = [
     # path('verify/<str:id>',views.verify,name='verification')
     path('create_new_project',views.createProject,name='newproject'),
     path('result',views.result,name='result')
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
