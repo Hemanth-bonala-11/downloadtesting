@@ -129,7 +129,7 @@ STATICFILES_DIRS=[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APPEND_SLASH=False
 
-
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 storage_account_name="oneapidriverlessml"
 container_name="oneapi"
 DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
