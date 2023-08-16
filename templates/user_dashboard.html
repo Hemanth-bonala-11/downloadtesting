@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function openNav() {
+          document.getElementById("navcontainer").style.width = "15%";
+          document.getElementById("dashboard").style.marginLeft = "0";
+        }
+        
+        function closeNav() {
+          document.getElementById("navcontainer").style.width = "0";
+          document.getElementById("dashboard").style.marginLeft= "0";
+        }
+        </script>
+    
+    <link rel="stylesheet" href={% static "/css/user_dashboard_style.css" %}>
+</head>
+<body>
+    
+    <div class="maincontainer">
+        
+        
+        <div class="navcontainer" id="navcontainer">
+            <p>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" align="center">×</a>
+
+            </p>
+            <div class="nav-heading">
+
+                <h1 align="center">{{username}}</h1>
+                <h1 align="center">Dashboard</h1>
+            </div>
+                <nav>
+                    
+                    
+                    <ul class="nav-links">
+                        
+                        <li>
+                            <a href="">View all projects</a>
+                        </li>
+                        <li>
+                            <a href="/create_new_project">Create new project</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li> 
+                        
+                        <li>
+                            <a href="">About</a>
+                            
+                        </li>
+                        <li>
+                            <a href="">Profile</a>
+                        </li>
+                        <li>
+                            <a href="">Settings</a>
+                        </li>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="dashboard" id="dashboard">
+                <!-- <h1>welcome</h1> -->
+                <button class="openbtn" onclick="openNav()">☰ </button>  
+                
+            </div>
+            
+            
+            
+        </div>
+    </body>
+    </html>

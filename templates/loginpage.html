@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title> 
+    <link rel="stylesheet" href={% static '/css/login_style.css' %}>
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="maincontainer">
+            <div class="loginform">
+                <div class="heading">
+                    <h1>Login</h1>
+                </div>
+                
+                    <form action="/dashboard" align="center" method="post">
+                        {% csrf_token %}
+                        <!-- <div class="inputtags"></div> -->
+                        <input type="email" name="email" id="email" class="inputs" placeholder="Enter  Your  Email">
+                        <input type="password" name="password" id="password" class="inputs" placeholder="Enter  your  Password">
+                        <input type="submit" value="Login" class="button">
+                    <!-- </div> -->
+                        <span>Don't have an account ? <a href="signup">signup</a></span>
+                    </form>
+                <div class="error">
+                    <p style="color: red" align="center"> {{ message }}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

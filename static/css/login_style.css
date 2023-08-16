@@ -1,0 +1,98 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.navcontainer{
+    min-height: 62px; 
+    width: 100vw;  
+   /* background-image:linear-gradient(to right rgb(0,68,115) 40%,rgb(14,20,56) 60%); ;*/
+   background: linear-gradient(120deg, rgb(0,74,121) ,60%,rgb(13,17,52));
+   display: flex;
+   align-items: center;
+   position: relative;
+   box-sizing: border-box;
+   flex-wrap: wrap;
+   
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    size: 10px;
+    margin: 40px;
+}
+.maincontainer{
+    background:linear-gradient(120deg, rgb(0,74,121) ,60%,rgb(13,17,52)); 
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+.loginform{
+    height: 500px;
+    width:30% ;
+    background-color:whitesmoke;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #0D1134;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+}
+
+.inputs{
+    height: 40px;
+    width: 70%;
+    border-radius: 7px;
+}
+.button{
+    
+    height: 40px;
+    width: 200px;
+    border-radius: 12px;
+    background-color: #00796c;
+    color: black;
+  }
+  .button:hover{
+    cursor: pointer;
+    background-color: #170d34;
+    color: white;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  form span{
+    color: #0D1134;
+    font-size: 20px;
+  }
+  form a{
+    color: red;
+    font-size: 20px;
+  }
+  
+.nav-links{
+    display: flex;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links:hover{
+  cursor: pointer;
+}

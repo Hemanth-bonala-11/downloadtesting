@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a project</title>
+    <link rel="stylesheet" href={% static 'css/index_style.css' %}>
+    <link rel="stylesheet" href={% static 'css/separatefile_style.css' %}>
+    
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <!-- <a href="main.html">Create a project</a> -->
+                <a href="/logout">logout</a>
+                <a href="#">Contact</a>
+                <a href=""></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="maincontainer">
+
+            <div class="separatecontainer">
+
+               <form action="/result" enctype="multipart/form-data" method="post">
+                   {% csrf_token %}
+               
+                <div class="form">
+
+                    <div class="projectname">
+                        <h3>Project name</h3>
+                        <input type="text" name="project-name">
+                     </div>
+                    <div class="h1heading">
+                        <h1>Upload  Dataset</h1>
+                    </div>
+                    
+                        <div class="fileinput">
+                            <div class="train_input">
+                                
+                                <input type="file" name="train_data" id="train_data" required> 
+                            </div>
+                            <!-- <div class="test_input">
+                                <label for="test_data">Test Data</label>
+                                <input type="file" name="test_data" id="test_data" required>
+                            </div> -->
+                       </div>
+                       <label for="fliletypeinput" class="heading">Select filetype</label>
+                       <div class="filetypeinput">
+                           <input 
+                           type="radio" name="filetype" 
+                           id="csv" class="input-hidden" value="csv" />
+                           <label for="csv">
+                           <img 
+                               src={% static 'images/csv.png' %}
+                               alt="csv_type" />
+                           </label>
+       
+                           <input 
+                           type="radio" name="filetype"
+                           id="excel" class="input-hidden" value="xls" />
+                           <label for="excel">
+                           <img 
+                               src={% static 'images/excel.png' %}
+                               alt="excel_type" />
+                           </label>
+                           <input 
+                           type="radio" name="filetype" 
+                           id="sql" class="input-hidden" value="sql" />
+                           <label for="sql">
+                           <img 
+                               src={% static 'images/sql_logo.png' %}
+                               alt="sql_type" />
+                           </label>
+                       </div>
+                        
+                       
+                       
+                        
+                        <input type="submit" class="button" value="submit">
+
+                </div>
+
+                </form>
+
+            </div>
+
+
+        </div>
+    </main>
+    <footer>
+        <div class="footercontainer">
+            
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href={% static "/css/signup_style.css" %}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="maincontainer">
+            <div class="info">
+                <div class="heading">
+                    <h1>Welcome</h1>
+                </div>
+                <div class="para">
+                    <p>You are 30 seconds away from </p>
+                    <p>Using HB's Driverless ML</p>
+                    <p>for free</p>
+                </div>
+                <div class="loginpage">
+                    <a href="/login">
+                        <button class="login-button">Login</button>
+                    </a>
+
+                </div>
+                
+
+            </div>
+            <div class="form">
+                <div class="fluid-container">
+                    <div id="signup-name">
+                        <h1>Sign up</h1>
+                    </div>
+                    <form action="/login_after_signup" method="post">
+                        {% csrf_token %}
+                        <div class="inputs">
+                            <div class="namesinputs">
+                                <input type="text" name="first-name" id="first-name" class="inputbox" placeholder="First Name *" required>
+                                <input type="text" name="last-name" id="last-name" class="inputbox" placeholder="Last Name *" required>
+                            </div>
+                            <div class="contactinfo">
+                                <input type="email" name="emailid" id="emailid" class="inputbox" placeholder="Your Email *" required>
+                                <input type="number" name="mobile-number" id="mobile-number" class="inputbox" placeholder="Your Phone *" required>
+                            </div>
+                            <div class="passwordinputs">
+                                <input type="password" name="password" id="password" class="inputbox" placeholder="Password *" required>
+                                <input type="text" name="confirm-password" id="confirm-password" class="inputbox" placeholder="Confirm Password *" required>
+                            </div>
+                            <div class="genderinput">
+                                <input type="radio" name="gender" id="male" value="Male" required>
+                                <label for="male">Male</label>
+                                <input type="radio" name="gender" id="female"  value="Female" required>
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="submitbutton">
+                                <input type="submit" value="Register" class="register-button">
+                            </div>
+                        </div>
+                        <div class="error">
+                                <p style="color: red" align="center"> {{ message }}</p>
+                            </div>
+
+                    </form>
+                </div>
+
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
